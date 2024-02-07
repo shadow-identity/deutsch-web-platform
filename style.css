@@ -1,6 +1,6 @@
 x-table {
     display: grid;
-    grid-template-columns: [tense-start] 1fr [tense-end
+    grid-template-columns: [tense-start] min-content [tense-end
             masculine-start] 1fr [masculine-end
             neuter-start] 1fr [neuter-end
             feminine-start] 1fr [feminine-end
@@ -66,6 +66,10 @@ x-example {
     display: block;
 }
 
+@media (width < 350px) {
+
+}
+
 /* 💅 */
 :root {
     --background-color: oklch(1 0 0);
@@ -87,8 +91,13 @@ x-table {
 
 x-table :is( x-gender, x-tense, x-example-set) {
     background: var(--background-color);
+    padding: 0.2rem;
 }
 
 b {
     color: oklch(0.3 0.5 45)
+}
+
+x-example:nth-of-type(2n) {
+    background-color: oklch(99% 0.05 0)
 }
