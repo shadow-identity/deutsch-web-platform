@@ -1,80 +1,99 @@
-x-table {
-	display: grid;
-	grid-template-columns: [tense-start] min-content [tense-end
-			masculine-start] 1fr [masculine-end
-			neuter-start] 1fr [neuter-end
-			feminine-start] 1fr [feminine-end
-			plural-start] 1fr [plural-end];
-	grid-template-rows: [head-start] min-content [head-end
-			nominative-start] 1fr [nominative-end
-			accusative-start] 1fr [accusative-end
-			dative-start] 1fr [dative-end];
-}
-
-x-gender-head {
-	display: grid;
-	grid-template-columns: subgrid;
-	grid-column: masculine-start / plural-end;
-}
-
-x-tense-head {
-	display: grid;
-	grid-template-rows: subgrid;
-	grid-row: nominative-start / dative-end;
-}
-
-x-example-grid {
-	display: grid;
-	grid-template-rows: subgrid;
-	grid-template-columns: subgrid;
-	grid-area: nominative-start / masculine-start / dative-end / plural-end;
-}
-
-x-example-set {
-	display: grid;
-}
-
-x-example-set[tense=nominative] {
-	grid-row: nominative-start / nominative-end;
-}
-
-x-example-set[tense=accusative] {
-	grid-row: accusative-start / accusative-end;
-}
-
-x-example-set[tense=dative] {
-	grid-row: dative-start / dative-end;
-}
-
-x-example-set[gender=masculine] {
-	grid-column: masculine-start / masculine-end;
-}
-x-example-set[gender=neuter] {
-	grid-column: neuter-start / neuter-end;
-}
-x-example-set[gender=feminine] {
-	grid-column: feminine-start / feminine-end;
-}
-
-x-example-set[plural] {
-	grid-column: plural-start / plural-end;
-}
-
-x-example {
-	display: block;
-}
-
-@media (width < 350px) {
-
-}
-
-/* 💅 */
 :root {
 	--background-color: oklch(1 0 0);
 	--border-color: oklch(0.95 0 0);
 	--border-size: 3px;
 }
 
+x-table {
+	display: table;
+}
+
+x-gender-head {
+	display: table-header-group;
+}
+
+x-gender,
+x-empty,
+x-tense,
+x-example-set {
+	display: table-cell;
+}
+
+x-tense-row {
+	display: table-row;
+}
+
+@supports (grid-template-columns: subgrid) {
+	x-table {
+		display: grid;
+		grid-template-columns: [tense-start] min-content [tense-end
+				masculine-start] 1fr [masculine-end
+				neuter-start] 1fr [neuter-end
+				feminine-start] 1fr [feminine-end
+				plural-start] 1fr [plural-end];
+		grid-template-rows: [head-start] min-content [head-end
+				nominative-start] 1fr [nominative-end
+				accusative-start] 1fr [accusative-end
+				dative-start] 1fr [dative-end];
+	}
+
+	x-gender-head {
+		display: grid;
+		grid-template-columns: subgrid;
+		grid-column: masculine-start / plural-end;
+	}
+
+	x-tense-row {
+		display: grid;
+		grid-template-columns: subgrid;
+		grid-template-rows: subgrid;
+		grid-column: tense-start / plural-end;
+	}
+
+	x-tense {
+		grid-column: tense-start / tense-end;
+	}
+
+	x-example-set {
+		display: grid;
+	}
+
+	x-example-set[tense=nominative] {
+		grid-row: nominative-start / nominative-end;
+	}
+
+	x-example-set[tense=accusative] {
+		grid-row: accusative-start / accusative-end;
+	}
+
+	x-example-set[tense=dative] {
+		grid-row: dative-start / dative-end;
+	}
+
+	x-example-set[gender=masculine] {
+		grid-column: masculine-start / masculine-end;
+	}
+	x-example-set[gender=neuter] {
+		grid-column: neuter-start / neuter-end;
+	}
+	x-example-set[gender=feminine] {
+		grid-column: feminine-start / feminine-end;
+	}
+
+	x-example-set[plural] {
+		grid-column: plural-start / plural-end;
+	}
+
+	x-empty {
+		display: none;
+	}
+}
+
+x-example {
+	display: block;
+}
+
+/* 💅 */
 x-table-wrapper {
 	background: var(--background-color);
 }
@@ -85,11 +104,22 @@ x-table {
 	gap: var(--border-size);
 	background-color: var(--border-color);
 	border: var(--border-size) solid var(--border-color);
+	border-collapse: collapse;
 }
 
 x-table :is( x-gender, x-tense, x-example-set) {
 	background: var(--background-color);
 	padding: 0.2rem;
+}
+
+x-gender,
+x-empty,
+x-tense,
+x-example-set {
+	border: var(--border-size) solid var(--border-color);
+	@supports (grid-template-columns: subgrid) {
+		border: none;
+	}
 }
 
 b {

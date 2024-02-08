@@ -11,6 +11,7 @@
 <x-table-wrapper>
 <x-table>
 	<x-gender-head>
+		<x-empty></x-empty>
 		<x-gender gender=masculine>
 			Maskulin
 		</x-gender>
@@ -24,19 +25,11 @@
 			Plural
 		</x-gender>
 	</x-gender-head>
-	<x-tense-head>
+
+	<x-tense-row tense=nominative>
 		<x-tense tense=nominative>
 			Nominativ
 		</x-tense>
-		<x-tense tense=accusative>
-			Akkusativ
-		</x-tense>
-		<x-tense tense=dative>
-			Dativ
-		</x-tense>
-	</x-tense-head>
-
-	<x-example-grid>
 		<x-example-set tense=nominative gender=masculine>
 			<x-example definite>
 				d<b>er</b> Mann
@@ -51,35 +44,6 @@
 				kein nett<b>er</b> Mann
 			</x-example>
 		</x-example-set>
-		<x-example-set tense=accusative gender=masculine>
-			<x-example definite>
-				d<b>en</b> Mann
-			</x-example>
-			<x-example definite adjective>
-				d<b>en</b> nett<b>en</b> Mann
-			</x-example>
-			<x-example indefinite adjective>
-				ein<b>en</b> nett<b>en</b> Mann
-			</x-example>
-			<x-example negative adjective>
-				kein<b>en</b> nett<b>en</b> Mann
-			</x-example>
-		</x-example-set>
-		<x-example-set tense=dative gender=masculine>
-			<x-example definite>
-				d<b>em</b> Mann
-			</x-example>
-			<x-example definite adjective>
-				d<b>em</b> nett<b>en</b> Mann
-			</x-example>
-			<x-example indefinite adjective>
-				ein<b>em</b> nett<b>en</b> Mann
-			</x-example>
-			<x-example negative adjective>
-				kein<b>em</b> nett<b>en</b> Mann
-			</x-example>
-		</x-example-set>
-
 		<x-example-set tense=nominative gender=neuter>
 			<x-example definite>
 				d<b>as</b> Kind
@@ -92,6 +56,54 @@
 			</x-example>
 			<x-example negative adjective>
 				kein nett<b>es</b> Kind
+			</x-example>
+		</x-example-set>
+		<x-example-set tense=nominative gender=feminine>
+			<x-example definite>
+				d<b>ie</b> Frau
+			</x-example>
+			<x-example definite adjective>
+				d<b>ie</b> nett<b>e</b> Frau
+			</x-example>
+			<x-example indefinite adjective>
+				ein<b>e</b> nett<b>e</b> Frau
+			</x-example>
+			<x-example negative adjective>
+				kein<b>e</b> nett<b>e</b> Frau
+			</x-example>
+		</x-example-set>
+		<x-example-set tense=nominative plural>
+		<x-example definite>
+			d<b>ie</b> Leute
+		</x-example>
+		<x-example definite adjective>
+			d<b>ie</b> nett<b>en</b> Leute
+		</x-example>
+		<x-example indefinite adjective>
+			- nett<b>e</b> Leute
+		</x-example>
+		<x-example negative adjective>
+			kein<b>e</b> nett<b>en</b> Leute
+		</x-example>
+	</x-example-set>
+	</x-tense-row>
+
+	<x-tense-row tense=accusative>
+		<x-tense tense=accusative>
+			Akkusativ
+		</x-tense>
+		<x-example-set tense=accusative gender=masculine>
+			<x-example definite>
+				d<b>en</b> Mann
+			</x-example>
+			<x-example definite adjective>
+				d<b>en</b> nett<b>en</b> Mann
+			</x-example>
+			<x-example indefinite adjective>
+				ein<b>en</b> nett<b>en</b> Mann
+			</x-example>
+			<x-example negative adjective>
+				kein<b>en</b> nett<b>en</b> Mann
 			</x-example>
 		</x-example-set>
 		<x-example-set tense=accusative gender=neuter>
@@ -108,35 +120,6 @@
 				kein nett<b>es</b> Kind
 			</x-example>
 		</x-example-set>
-		<x-example-set tense=dative gender=neuter>
-			<x-example definite>
-				d<b>em</b> Kind
-			</x-example>
-			<x-example definite adjective>
-				d<b>em</b> nett<b>en</b> Kind
-			</x-example>
-			<x-example indefinite adjective>
-				ein<b>em</b> nett<b>en</b> Kind
-			</x-example>
-			<x-example negative adjective>
-				kein<b>em</b> nett<b>en</b> Kind
-			</x-example>
-		</x-example-set>
-
-		<x-example-set tense=nominative gender=feminine>
-			<x-example definite>
-				d<b>ie</b> Frau
-			</x-example>
-			<x-example definite adjective>
-				d<b>ie</b> nett<b>e</b> Frau
-			</x-example>
-			<x-example indefinite adjective>
-				ein<b>e</b> nett<b>e</b> Frau
-			</x-example>
-			<x-example negative adjective>
-				kein<b>e</b> nett<b>e</b> Frau
-			</x-example>
-		</x-example-set>
 		<x-example-set tense=accusative gender=feminine>
 			<x-example definite>
 				d<b>ie</b> Frau
@@ -149,6 +132,54 @@
 			</x-example>
 			<x-example negative adjective>
 				kein<b>e</b> nett<b>e</b> Frau
+			</x-example>
+		</x-example-set>
+		<x-example-set tense=accusative plural>
+		<x-example definite>
+			d<b>ie</b> Leute
+		</x-example>
+		<x-example definite adjective>
+			d<b>ie</b> nett<b>en</b> Leute
+		</x-example>
+		<x-example indefinite adjective>
+			- nett<b>e</b> Leute
+		</x-example>
+		<x-example negative adjective>
+			kein<b>e</b> nett<b>en</b> Leute
+		</x-example>
+	</x-example-set>
+	</x-tense-row>
+
+	<x-tense-row tense=accusative>
+		<x-tense tense=dative>
+			Dativ
+		</x-tense>
+		<x-example-set tense=dative gender=masculine>
+			<x-example definite>
+				d<b>em</b> Mann
+			</x-example>
+			<x-example definite adjective>
+				d<b>em</b> nett<b>en</b> Mann
+			</x-example>
+			<x-example indefinite adjective>
+				ein<b>em</b> nett<b>en</b> Mann
+			</x-example>
+			<x-example negative adjective>
+				kein<b>em</b> nett<b>en</b> Mann
+			</x-example>
+		</x-example-set>
+		<x-example-set tense=dative gender=neuter>
+			<x-example definite>
+				d<b>em</b> Kind
+			</x-example>
+			<x-example definite adjective>
+				d<b>em</b> nett<b>en</b> Kind
+			</x-example>
+			<x-example indefinite adjective>
+				ein<b>em</b> nett<b>en</b> Kind
+			</x-example>
+			<x-example negative adjective>
+				kein<b>em</b> nett<b>en</b> Kind
 			</x-example>
 		</x-example-set>
 		<x-example-set tense=dative gender=feminine>
@@ -165,35 +196,6 @@
 				kein<b>er</b> nett<b>en</b> Frau
 			</x-example>
 		</x-example-set>
-
-		<x-example-set tense=nominative plural>
-			<x-example definite>
-				d<b>ie</b> Leute
-			</x-example>
-			<x-example definite adjective>
-				d<b>ie</b> nett<b>en</b> Leute
-			</x-example>
-			<x-example indefinite adjective>
-				- nett<b>e</b> Leute
-			</x-example>
-			<x-example negative adjective>
-				kein<b>e</b> nett<b>en</b> Leute
-			</x-example>
-		</x-example-set>
-		<x-example-set tense=accusative plural>
-			<x-example definite>
-				d<b>ie</b> Leute
-			</x-example>
-			<x-example definite adjective>
-				d<b>ie</b> nett<b>en</b> Leute
-			</x-example>
-			<x-example indefinite adjective>
-				- nett<b>e</b> Leute
-			</x-example>
-			<x-example negative adjective>
-				kein<b>e</b> nett<b>en</b> Leute
-			</x-example>
-		</x-example-set>
 		<x-example-set tense=dative plural>
 			<x-example definite>
 				d<b>en</b> Leute<b>n</b>
@@ -208,7 +210,7 @@
 				kein<b>en</b> nett<b>en</b> Leute<b>n</b>
 			</x-example>
 		</x-example-set>
-	</x-example-grid>
+	</x-tense-row>
 </x-table>
 </x-table-wrapper>
 </body>
