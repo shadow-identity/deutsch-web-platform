@@ -1,5 +1,7 @@
 :root {
+	--background-color: white;
 	--background-color: oklch(1 0 0);
+	--border-color: AliceBlue;
 	--border-color: oklch(0.95 0 0);
 	--border-size: 3px;
 }
@@ -123,9 +125,11 @@ x-example-set {
 }
 
 b {
+	color: crimson;
 	color: oklch(0.3 0.5 45)
 }
 
 x-example:nth-of-type(2n) {
-	background-color: oklch(99% 0.05 0)
+	background-color: LavenderBlush;
+	background-color: oklch(99% 0.05 0);
 }
